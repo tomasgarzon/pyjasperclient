@@ -9,9 +9,10 @@ Requirements
 * re # included in standard distribution
 * email # included in standard distribution
 * xml # included in standard distribution
-* suds (>= 0.3.8 GA) # https://fedorahosted.org/suds/wiki
 
-NOTE: module has been tested on python v2.6.4 only.
+* suds-py3
+
+NOTE: module has been tested on python v3.5 only.
 
 Usage
 =====

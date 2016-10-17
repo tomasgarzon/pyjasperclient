@@ -1,16 +1,16 @@
 from setuptools import setup
 
-name = "pyjasperclient"
-version = "0.2.3"
+name = "py3jasperclient"
+version = "0.1"
 
 setup(
     name=name,
     version=version,
-    description='JasperServer SOAP client for Python',
-    packages=['pyjasperclient',],
-    install_requires = ['python>=2.5', 'suds'],
-    url='https://github.com/agaoglu/pyjasperclient',
+    description='JasperServer SOAP client for Python3',
+    packages=['py3jasperclient', ],
+    install_requires=['python>=3.5', 'suds-py3'],
+    url='https://github.com/tomasgarzon/pyjasperclient',
     license='Apache',
-    author='Erdem Agaoglu',
-    author_email='erdem[dot]agaoglu[at]gmail.com'
+    author='Tomas Garzon',
+    author_email='tomasgarzonhervas[at]gmail.com'
 )
