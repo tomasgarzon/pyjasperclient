@@ -178,7 +178,7 @@ class JasperClient(object):
         self.client.set_options(retxml=True)
         res = self.client.service.get(req)
         self.client.set_options(retxml=False)
-        out = parse_multipart(res)
+        out = parse_multipart(res.decode('utf-8'))
         jrxml = out[map(itemgetter('content-id'), out).index('<attachment>')]
 
         # parse jrxml
@@ -219,7 +219,7 @@ class JasperClient(object):
         res = self.client.service.runReport(req)
         self.client.set_options(retxml=False)  # temporarily of course
         try:
-            data = parse_multipart(res)
+            data = parse_multipart(res.decode('latin1'))
             return data
         except NotMultipartError:
             soapelement = ET.fromstring(res)
@@ -260,7 +260,7 @@ def createRequest(**kwargs):
             p = ET.SubElement(rd, "parameter")
             p.set("name", pname)
             p.text = pval
-    return ET.tostring(r)
+    return ET.tostring(r).decode('utf-8')
 
 
 def parse_multipart(res):
